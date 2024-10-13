@@ -1,0 +1,11 @@
+.title {
+  & h1 {
+    color: #b6db6d;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  & p {
+    font-size: 1.2rem;
+  }
+}
