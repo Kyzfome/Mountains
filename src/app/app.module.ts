@@ -10,6 +10,11 @@ import { TourismComponent } from './tourism/tourism.component';
 import { EcosystemComponent } from './ecosystem/ecosystem.component';
 import { CultureComponent } from './culture/culture.component';
 import { ContainerComponent } from './container/container.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -24,9 +29,15 @@ import { ContainerComponent } from './container/container.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

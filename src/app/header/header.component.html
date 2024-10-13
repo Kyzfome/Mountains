@@ -5,11 +5,40 @@
     <img src="../../assets/images/logo.png" alt="logo" />
     <h1>Гори України</h1>
   </div>
-  <div class="menu d-flex w-100 align-items-center justify-content-end gap-3">
+  <div
+    *ngIf="!baseService.isMobile"
+    class="menu d-flex w-100 align-items-center justify-content-end gap-4"
+  >
     <a routerLink="/home">Головна</a>
     <a routerLink="/high-places">Найвищі Вершини</a>
     <a routerLink="/tourism">Туризм і Розваги</a>
     <a routerLink="/ecosystem">Природа та Екосистеми</a>
     <a routerLink="/culture">Культурна Спадщина</a>
+  </div>
+
+  <div
+    *ngIf="baseService.isMobile"
+    class="mobile-menu d-flex w-100 align-items-center justify-content-end"
+  >
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Mobile Menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="'/home'">
+        <span>Головна</span>
+      </button>
+      <button mat-menu-item [routerLink]="'/high-places'">
+        <span>Найвищі Вершини</span>
+      </button>
+      <button mat-menu-item [routerLink]="'/tourism'">
+        <span>Туризм і Розваги</span>
+      </button>
+      <button mat-menu-item [routerLink]="'/ecosystem'">
+        <span>Природа та Екосистеми</span>
+      </button>
+      <button mat-menu-item [routerLink]="'/culture'">
+        <span>Культурна Спадщина</span>
+      </button>
+    </mat-menu>
   </div>
 </div>

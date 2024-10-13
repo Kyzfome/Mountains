@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { BaseService } from '../services/base.service';
 
 export interface DataItem {
   url: string;
@@ -13,4 +14,6 @@ export interface DataItem {
 })
 export class ContainerComponent {
   @Input() data!: DataItem[];
+
+  constructor(public baseService: BaseService) {}
 }
